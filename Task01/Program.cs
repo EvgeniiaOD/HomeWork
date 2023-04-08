@@ -7,14 +7,14 @@
 // a = -3 b = 9 -> нет
 
 Console.WriteLine("Введите число"); //призыв пользователю добавить любое число
-int numberA = Convert.ToInt32(Console.ReadLine());
+int numberA = Convert.ToInt32(Console.ReadLine()); //конвертирует тектовый формат команды консоль.ридлайн в число (инт намбер)
 Console.WriteLine("Введите еще одно число"); //призыв пользователю добавить второе  любое число
-int NumberB = Convert.ToInt32(Console.ReadLine());
-if (numberA == NumberB * NumberB)
+int NumberB = Convert.ToInt32(Console.ReadLine()); //конвертирует тектовый формат команды консоль.ридлайн в число (инт намбер)
+if (numberA == NumberB * NumberB) //проверяет, если переменная намберА равняется квадрату переменной намберВ
 {
-    Console.WriteLine("да");
+    Console.WriteLine("да"); //выводит "да", если равняется
 }
 else
 {
-    Console.WriteLine("А вот и нет!");
+    Console.WriteLine("нет"); // в остальных случаях выводит "нет"
 }
