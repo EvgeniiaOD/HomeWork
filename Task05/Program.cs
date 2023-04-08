@@ -3,13 +3,13 @@
 // числа в промежутке от -N до N.
 // 4 -> "-4, -3, -2, -1, 0, 1, 2, 3, 4"
 // 2 -> " -2, -1, 0, 1, 2"
-Console.WriteLine("Введите чило:");
-int NumberA = Convert.ToInt32(Console.ReadLine());
-int NumberB = -NumberA;
-while (NumberB<=NumberA)
+Console.WriteLine("Введите чило:"); //призыв пользователя совершить действие
+int NumberA = Convert.ToInt32(Console.ReadLine()); //говорим, что записываем число, а не строку
+int NumberB = -NumberA; //задаем переменной начальное значение, согласно условию задачи 
+while (NumberB<=NumberA) // пока выполняется условие, что начальное значение меньше или равно заданному пользователем числу
 {
-    Console.Write(NumberB+" ");
-    NumberB++;
+    Console.Write(NumberB+" "); // консоль будет выводить числа, начиная с начального + ставить пробел после него
+    NumberB++; //счетчик, прибавляющий 1 к предыдущему значению??
 }
 
 
