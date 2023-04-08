@@ -3,18 +3,18 @@
 // 3 -> Среда
 // 5 -> Пятница
 
-Console.WriteLine("Введите число:");
-int date = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число:"); //предлагаем пользователю ввести число
+int date = Convert.ToInt32(Console.ReadLine()); //распознаем ыыеденные данные как число (строку конвертируем в число)
 
-if (date == 1)
+if (date == 1) //условие
 {
-    Console.WriteLine("Понедельник");
+    Console.WriteLine("Понедельник"); //то, что выводится , если условие выполнено
 }
-else if (date == 2)
+else if (date == 2) //если первое условие не выполнено, проверяем второе условие
 {
-    Console.WriteLine("Вторник");
+    Console.WriteLine("Вторник"); //то, что выводится , если второе по счету условие выполнено
 }
-else if (date == 3)
+else if (date == 3) //аналогично предыдущим
 {
     Console.WriteLine("Среда");
 }
@@ -35,5 +35,5 @@ else if (date == 7)
     Console.WriteLine("Воскресенье");
 }
 else {
-    Console.WriteLine("Такого дня нет!");
+    Console.WriteLine("Такого дня нет!"); //если ни одно условие выше не выполнено
 }
