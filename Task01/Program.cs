@@ -6,8 +6,15 @@
 // a = 9, b = -3 -> да
 // a = -3 b = 9 -> нет
 
-Console.WriteLine("Введите число 1");
-Console.WriteLine("Введите число 2");
-int number = 25;
-int number2 = 5;
-
+Console.WriteLine("Введите число"); //призыв пользователю добавить любое число
+int numberA = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите еще одно число"); //призыв пользователю добавить второе  любое число
+int NumberB = Convert.ToInt32(Console.ReadLine());
+if (numberA == NumberB * NumberB)
+{
+    Console.WriteLine("да");
+}
+else
+{
+    Console.WriteLine("А вот и нет!");
+}
