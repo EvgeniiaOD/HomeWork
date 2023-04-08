@@ -3,4 +3,13 @@
 // числа в промежутке от -N до N.
 // 4 -> "-4, -3, -2, -1, 0, 1, 2, 3, 4"
 // 2 -> " -2, -1, 0, 1, 2"
-Console.WriteLine("Hello, World!");
+Console.WriteLine("Введите чило:");
+int NumberA = Convert.ToInt32(Console.ReadLine());
+int NumberB = -NumberA;
+while (NumberB<=NumberA)
+{
+    Console.Write(NumberB+" ");
+    NumberB++;
+}
+
+
