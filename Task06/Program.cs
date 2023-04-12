@@ -6,12 +6,12 @@
 // 7 -> нет
 
 Console.WriteLine("Введите чило:"); 
-int number = Convert.ToInt32(Console.ReadLine()); 
-if (number/2 = 1) // надо поправить сторку
+int number = Convert.ToInt32(Console.ReadLine()); //преобразовали строку в число
+if (number % 2 == 0) // если число при делении на 2 имеет 
 {
-    Console.WriteLine("нет");
+       Console.WriteLine("да");
 }
 else
 {
-    Console.WriteLine("да");
+    Console.WriteLine("нет");
 }
