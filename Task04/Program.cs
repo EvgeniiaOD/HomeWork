@@ -4,19 +4,19 @@
 // 44, 5, 78 -> 78
 // 22, 3, 9 -> 22
 Console.WriteLine("Введите число: ");
-int NumberA = Convert.ToInt32(Console.ReadLine());
+int numberA = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите еще одно число: ");
-int NumberB = Convert.ToInt32(Console.ReadLine());
+int numberB = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("И еще раз введите число: ");
-int NumberC = Convert.ToInt32(Console.ReadLine());
+int numberC = Convert.ToInt32(Console.ReadLine());
 
-int max = NumberA;
-if (NumberB>max)
+int max = numberA;
+if (numberB > max)
 {
-    max = NumberB;
+    max = numberB;
 }
-if (NumberC>max)
+if (numberC > max)
 {
-    max = NumberC;
+    max = numberC;
 }
-Console.WriteLine (max);
+Console.WriteLine($"максимальное из введенных чисел -> {max}");
