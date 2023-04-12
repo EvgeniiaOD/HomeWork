@@ -5,13 +5,13 @@
 // -3 -> нет
 // 7 -> нет
 
-Console.WriteLine("Введите чило:"); 
+Console.WriteLine("Введите чило:");
 int number = Convert.ToInt32(Console.ReadLine()); //преобразовали строку в число
-if (number % 2 == 0) // если число при делении на 2 имеет 
+if (number % 2 == 0) // проверяем на четность 
 {
-       Console.WriteLine("да");
+    Console.WriteLine("да"); //если четное - пишем "да"
 }
 else
 {
-    Console.WriteLine("нет");
+    Console.WriteLine("нет"); // если нечетное - пишем "нет"
 }
