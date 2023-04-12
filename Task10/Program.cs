@@ -9,13 +9,13 @@
 Console.WriteLine("Введите трехзначное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 if (number >= 100 && number <= 999)
-{
-    int secondDigit = number / 10;
-    int firstDigit = number / 100;
-    int newNumber = firstDigit * 10 - secondDigit;
-    newNumber = -newNumber;
-    Console.WriteLine($"средняя цифра числа -> {newNumber}");
-}
+// {
+//     int secondDigit = number / 10;
+//     int firstDigit = number / 100;
+//     int newNumber = firstDigit * 10 - secondDigit;
+//     newNumber = -newNumber;
+//     Console.WriteLine($"средняя цифра числа -> {newNumber}");
+// }
 
 // или через метод:
 {
