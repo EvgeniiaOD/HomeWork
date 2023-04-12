@@ -17,8 +17,8 @@ else
 }
 
 
-int maxDigit = firstDigit > secondDigit ? firstDigit : secondDigit; //другой вариант записи условия if else, где ?=тогда, :=иначе.
-Console.WriteLine($"Наибольшая цифра числа -> {maxDigit}");
+int maxDigit2 = firstDigit > secondDigit ? firstDigit : secondDigit; //другой вариант записи условия if else, где ?=тогда, :=иначе.
+Console.WriteLine($"Наибольшая цифра числа -> {maxDigit2}");
 
 
 // или можно записать через метод. Только ничего не понятно!:
