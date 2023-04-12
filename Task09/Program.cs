@@ -4,25 +4,29 @@
 // 78 -> 8
 // 12-> 2
 // 85 -> 8
-int number = new Random() .Next(10,100);
-Console.WriteLine ($"Случайное число из отрезка 10 - 99 -> {number}");
+
+
+int number = new Random().Next(10, 100);
+Console.WriteLine($"Случайное число из отрезка 10 - 99 -> {number}");
 int firstDigit = number / 10;
 int secondDigit = number % 10; // остаток от деления на 10 - это последняя цифра числа
-if (firstDigit>secondDigit) Console.WriteLine ($"Наибольшая цифра числа -> {firstDigit}");   
-
+if (firstDigit > secondDigit) Console.WriteLine($"Наибольшая цифра числа -> {firstDigit}");
 else
 {
-    Console.WriteLine ($"Наибольшая цифра числа -> {secondDigit}");
+    Console.WriteLine($"Наибольшая цифра числа -> {secondDigit}");
 }
 
-// int maxDigit = firstDigit > secondDigit ? firstDigit : secondDigit;
-// Console.WriteLine($"Наибольшая цифра числа -> {maxDigit}");
 
+int maxDigit = firstDigit > secondDigit ? firstDigit : secondDigit; //другой вариант записи условия if else, где ?=тогда, :=иначе.
+Console.WriteLine($"Наибольшая цифра числа -> {maxDigit}");
+
+
+// или можно записать через метод. Только ничего не понятно!:
 int maxDigit = MaxDigit(number);
-int MaxDigit (int num) // num = number
+int MaxDigit(int num) // num = number
 {
-int firstDigit = num / 10;
-int secondDigit = num % 10;
-int maxDigit = firstDigit > secondDigit ? firstDigit : secondDigit;
-return maxDigit;
+    int firstDigit = num / 10;
+    int secondDigit = num % 10;
+    int maxDigit = firstDigit > secondDigit ? firstDigit : secondDigit;
+    return maxDigit;
 }
