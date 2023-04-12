@@ -4,3 +4,8 @@
 // второму, то программа выводит остаток от деления.
 // 34, 5 -> не кратно, остаток 4
 // 16, 4 -> кратно
+
+Console.WriteLine("Введите число: ");
+int numberA = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine ("Введите еще одно число: ");
+int numberB = Convert.ToInt32 (Console.ReadLine());
