@@ -4,13 +4,17 @@
 // 32679 -> 6
 
 Console.WriteLine("Задайте число:");
-int number = Convert.ToInt32 (Console.ReadLine());
+int number = Convert.ToInt32(Console.ReadLine());
 
-if (number>=100)
+if (number<100)
 {
-   Console.WriteLine("третья цифра есть");
+    Console.WriteLine("третьей цифры нет");    
 }
 else
 {
-    Console.WriteLine("третьей цифры нет");
+    while (number>999)
+{
+    number=number/10;
+}
+Console.WriteLine(number%10);
 }
