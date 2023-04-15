@@ -6,15 +6,40 @@
 Console.WriteLine("Задайте число:");
 int number = Convert.ToInt32(Console.ReadLine());
 
-if (number<100)
+// if (number<100)
+// {
+//     Console.WriteLine("третьей цифры нет");    
+// }
+// else
+// {
+//     while (number>999)
+// {
+//     number=number/10;
+// }
+// Console.WriteLine(number%10);
+// }
+
+
+bool CheckNumber(int number)
 {
-    Console.WriteLine("третьей цифры нет");    
+    if (number < 100)
+    {
+        Console.WriteLine("третьей цифры нет");
+        return false;
+    }
+    return true;
 }
-else
+
+int ThirdDigit(int number)
 {
-    while (number>999)
-{
-    number=number/10;
+    while (number > 999)
+    {
+        number = number / 10;
+    }
+    return number % 10;
 }
-Console.WriteLine(number%10);
+
+if (CheckNumber(number))
+{
+    Console.WriteLine (ThirdDigit(number));
 }
