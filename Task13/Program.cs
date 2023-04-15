@@ -6,20 +6,21 @@
 Console.WriteLine("Задайте число:");
 int number = Convert.ToInt32(Console.ReadLine());
 
-// if (number<100)
-// {
-//     Console.WriteLine("третьей цифры нет");    
-// }
-// else
-// {
-//     while (number>999)
-// {
-//     number=number/10;
-// }
-// Console.WriteLine(number%10);
-// }
+// не через метод: 
+if (number<100)
+{
+    Console.WriteLine("третьей цифры нет");    
+}
+else
+{
+    while (number>999)
+{
+    number=number/10;
+}
+Console.WriteLine(number%10);
+}
 
-
+// через метод: 
 bool CheckNumber(int number)
 {
     if (number < 100)
