@@ -7,10 +7,10 @@
 
 Console.WriteLine("Введите цифру, обозначающую день недели");
 int number = Convert.ToInt32(Console.ReadLine());
-number=-number;
-bool NumberCheck(int number)
+number = -number;
+bool NumberCheck(int num)
 {
-    if (number < 1 || number >= 8)
+    if (num < 1 || num >= 8)
     {
         Console.WriteLine("такого дня нет");
         return false;
@@ -18,16 +18,16 @@ bool NumberCheck(int number)
     return true;
 
 }
-bool WeekDayCheck(int number)
+bool WeekDayCheck(int num)
 {
-    if (number > 0 && number <6)
-    {   
-        return false;  
+    if (num > 0 && num < 6)
+    {
+        return false;
     }
     return true;
 }
 
 if (NumberCheck(number))
 {
-    Console.WriteLine(WeekDayCheck(number)?"да":"нет");
+    Console.WriteLine(WeekDayCheck(number) ? "да" : "нет");
 }
