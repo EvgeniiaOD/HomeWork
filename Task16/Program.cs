@@ -15,6 +15,4 @@ bool CheckIfSquare(int numA, int numB)
 {
     return numB == numA * numA | numA == numB * numB;
 }
-
-
 Console.WriteLine(result ? "да" : "нет");
