@@ -8,3 +8,17 @@
 // 3 | 27
 // 4 | 64
 // 5 | 125
+
+Console.WriteLine("Введите число:");
+int number = Convert.ToInt32(Console.ReadLine());
+
+void NumberToCube(int num)
+{
+    int count = 1; while (count <= num)
+    {
+        Console.WriteLine($"{count,4} | {count * count * count,4}");
+        count++;
+    }
+}
+
+NumberToCube(number);
