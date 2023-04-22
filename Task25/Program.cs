@@ -18,4 +18,17 @@ int Exponentiation(int numA, int numB)
     return exponent;
 }
 
-Console.WriteLine($"если число {numberA} возвести в степень {numberB}, то получится {Exponentiation(numberA,numberB)}");
+bool ExpCheck(int numB)
+{
+if (numB<0)
+{
+   Console.WriteLine ("Нельзя возвести в отрицательную степень");
+   return false;
+};
+return true;
+}
+
+if (ExpCheck(numberB))
+{
+   Console.WriteLine($"если число {numberA} возвести в степень {numberB}, то получится {Exponentiation(numberA,numberB)}"); 
+};
