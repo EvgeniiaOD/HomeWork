@@ -7,3 +7,20 @@
 Console.WriteLine("Введите целое положительное число :");
 int number = Convert.ToInt32(Console.ReadLine());
 
+if (number >0)
+{
+int binResult = DecToBin(number);
+Console.WriteLine(binResult);
+}
+int DecToBin(int num)
+{
+    int count = 1;
+    int result = 0;
+    while (num > 0)
+    {
+        result += num % 2 * count;
+        num /= 2;
+        count = count * 10;
+    }
+    return result;
+}

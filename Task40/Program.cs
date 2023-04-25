@@ -22,5 +22,21 @@ bool IsExistTriangle(int numA, int numB, int numC)
     //  если тип будет не бул - то такой вариант уже не пройдет
 }
 
-bool existTriangle = IsExistTriangle(numberA, numberB, numberC);
-Console.WriteLine(existTriangle ? "такой треугольник существует" : "такой трейгольник НЕ существует");
+// bool existTriangle = IsExistTriangle(numberA, numberB, numberC);
+// Console.WriteLine(existTriangle ? "такой треугольник существует" : "такой трейгольник НЕ существует");
+
+
+// Console.Write("Введите сторону A: ");
+// int numberA = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите сторону B: ");
+// int numberB = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите сторону C: ");
+// int numberC = Convert.ToInt32(Console.ReadLine());
+
+// bool IsExistTriangle(int numA, int numB, int numC)
+// {
+//     return numA < numB + numC && numB < numA + numC && numC < numA + numB;
+// }
+
+// bool existTriangle = IsExistTriangle(numberA, numberB, numberC);
+// Console.WriteLine(existTriangle ? "Такой треугольник существует" : "Такой треугольник невозможен");
