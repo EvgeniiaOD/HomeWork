@@ -20,7 +20,7 @@ int[] CreateArray(int size)
     int[] arr = new int[size];
     for (int i = 0; i < arr.Length; i++)
     {
-        arr[i] = new Random().Next(0, 10);
+        arr[i] = new Random().Next(-10,10);
     }
     return arr;
 }
@@ -30,7 +30,7 @@ int SumDigit(int[] arr)
         int sum = 0;
     for (int i = 0; i < arr.Length; i++)
     {
-        if (i % 2 == 0) sum += arr[i];
+        if (i % 2 == 1) sum += arr[i];
         else sum += 0;
     }
     return sum;
