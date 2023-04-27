@@ -9,25 +9,25 @@ Console.WriteLine("Введите длину массива:");
 int size = Convert.ToInt32(Console.ReadLine());
 int[] array = CreateArray(size);
 int total = SumDigit(array);
-Console.Write($"Сумма всех элементов массива");
+Console.Write($"Сумма элементов массива");
 Console.Write("[");
 PrintArray(array);
 Console.Write("]");
-Console.Write($"стоящих на нечетных позициях равна {total}");
+Console.Write($", стоящих на нечетных позициях равна -> {total}");
 
 int[] CreateArray(int size)
 {
     int[] arr = new int[size];
     for (int i = 0; i < arr.Length; i++)
     {
-        arr[i] = new Random().Next(-10,10);
+        arr[i] = new Random().Next(-10, 10);
     }
     return arr;
 }
 
 int SumDigit(int[] arr)
 {
-        int sum = 0;
+    int sum = 0;
     for (int i = 0; i < arr.Length; i++)
     {
         if (i % 2 == 1) sum += arr[i];
