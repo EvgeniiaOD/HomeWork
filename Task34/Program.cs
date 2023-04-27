@@ -3,8 +3,9 @@
 
 // [345, 897, 568, 234] -> 2
 
-
-int[] array = CreateArray(6);
+Console.WriteLine("Введите длину массива:");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] array = CreateArray(size);
 Console.Write("[");
 PrintArray(array);
 Console.Write("] -> ");
@@ -36,7 +37,7 @@ int CheckEvenNumbers(int[] arr)
     int num = 0;
     for (int i = 0; i < arr.Length; i++)
     {
-      if (arr[i]%2==0) num+=1;
+        if (arr[i] % 2 == 0) num += 1;
     }
     return num;
 }
