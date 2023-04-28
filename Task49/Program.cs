@@ -28,6 +28,17 @@ void PrintMatrix(int[,] matrix)
       Console.WriteLine();
    }
 }
+// int[,] SquareEvenIndex(int[,] matrix)
+// {
+//    for (int i = 0; i < matrix.GetLength(0); i++)
+//    {
+//       for (int j = 0; j < matrix.GetLength(1); j++)
+//       {
+//          if (i%2==0 && j%2==0) matrix[i, j] *= matrix[i, j];
+//       }
+//    }
+//    return matrix;
+// }
 int[,] SquareEvenIndex(int[,] matrix)
 {
    for (int i = 0; i < matrix.GetLength(0); i+=2)
@@ -39,7 +50,6 @@ int[,] SquareEvenIndex(int[,] matrix)
    }
    return matrix;
 }
-
 
 int[,] matrix = CreateMatrixRndInt(3, 4, -10, 10);
 PrintMatrix(matrix);
