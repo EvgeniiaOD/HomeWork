@@ -43,10 +43,56 @@ int SumMain(int[,] matrix)
    }
    return sum;
 }
+// еще вариант:
 
+int EvenElements(int[,] matrix)
+{
+    int sum = 0;
+    for (int i = 0; i < matrix.GetLength(0); i ++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j ++)
+        {
+            if (i == j)
+            sum += matrix[i,j]; 
+        }
+    }
+    return sum;
+
+}
+
+// оптимальный вариант: 
+
+int SumMain(int[,] matrix)
+{
+   int sum = 0;
+   int a = matrix.GetLength(0);
+   if(a>matrix.GetLength(1)) a = matrix.GetLength(1);
+   for (int i = 0; i < a; i++)
+   {
+      sum += matrix[i,i];
+   }
+   return sum;
+}
+int[,] matrix = CreateMatrixRndInt(4, 3, -10, 10);
+PrintMatrix(matrix);
+Console.WriteLine();
+int sumMain = SumMain(matrix);
+Console.WriteLine(sumMain);
 
 int[,] matrix = CreateMatrixRndInt(3, 4, -10, 10);
 PrintMatrix(matrix);
 Console.WriteLine();
 int sumMain = SumMain(matrix);
 Console.WriteLine(sumMain);
+
+//  еще вариант: 
+
+// int SumDiag(int[,] matrix)
+// {
+//     int sum = 0;
+//     for (int i = 0; i < matrix.GetLength(0) && i < matrix.GetLength(1); i++)
+//     {
+//         sum += matrix[i,i];
+//     }
+//     return sum;
+// }
