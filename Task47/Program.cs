@@ -14,8 +14,7 @@ double[,] CreateTableRndDoub(int rows, int columns)
     {
         for (int j = 0; j < table.GetLength(1); j++)
         {
-            table[i, j] = rnd.NextDouble(); 
-            Math.Round(table[i,j], 0, MidpointRounding.ToEven);
+            table[i, j] = Math.Round(rnd.Next(-100, 100) * 0.1, 1);
         }
     }
     return table;
