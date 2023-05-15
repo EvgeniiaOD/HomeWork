@@ -28,6 +28,7 @@ void PrintTable(double[,] table)
         for (int j = 0; j < table.GetLength(1); j++)
         {
             Console.Write($"{table[i, j],5} ");
+            Math.Round(table[i,j], 1, MidpointRounding.ToZero);
         }
         Console.WriteLine();
     }
