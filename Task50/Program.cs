@@ -1,0 +1,67 @@
+﻿//  Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, 
+// и возвращает значение этого элемента или же указание, что такого элемента нет.
+
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+
+// 1, 7 -> такого элемента в массиве нет
+
+int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
+{
+    int[,] matrix = new int[rows, columns];
+    Random rnd = new Random();
+
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            matrix[i, j] = rnd.Next(min, max + 1);
+        }
+    }
+    return matrix;
+}
+void PrintMatrix(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            Console.Write($"{matrix[i, j],5} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+Console.WriteLine("Задайте количество строк таблицы: ");
+int numberRows = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Задайте количество столбцов таблицы: ");
+int numberColumns = Convert.ToInt32(Console.ReadLine());
+
+if (numberRows == 0 | numberColumns == 0)
+{
+    Console.WriteLine("Такую таблицу не создать");
+    return;
+}
+int[,] matrix = CreateMatrixRndInt(numberRows, numberColumns, 0, 60);
+PrintMatrix(matrix);
+Console.WriteLine();
+
+Console.WriteLine("Введите координату X числа: ");
+int coordinateX = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите координату Y числа: ");
+int coordinateY = Convert.ToInt32(Console.ReadLine());
+
+if (coordinateX > numberRows)
+{
+    Console.WriteLine($"Координата Х должна быть меньше {numberRows}");
+    return;
+};
+if (coordinateY > numberColumns)
+{
+    Console.WriteLine($"Координата Y должна быть меньше {numberColumns}");
+    return;
+}
+
+Console.WriteLine($"Элемент с координатами {coordinateX} и {coordinateY} -> {matrix[coordinateX, coordinateY]}");
