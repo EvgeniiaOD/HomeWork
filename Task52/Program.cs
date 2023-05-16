@@ -1,4 +1,5 @@
-﻿// Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+﻿// Задача 52. 1) Задайте двумерный массив из целых чисел.
+// 2)  Найдите среднее арифметическое элементов в каждом столбце.
 
 // Например, задан массив:
 // 1 4 7 2
@@ -6,46 +7,6 @@
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-// int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
-// {
-//     int[,] matrix = new int[rows, columns];
-//     Random rnd = new Random();
-
-//     for (int i = 0; i < matrix.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < matrix.GetLength(1); j++)
-//         {
-//             matrix[i, j] = rnd.Next(min, max + 1);
-//         }
-//     }
-//     return matrix;
-// }
-// void PrintMatrix(int[,] matrix)
-// {
-//     for (int i = 0; i < matrix.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < matrix.GetLength(1); j++)
-//         {
-//             Console.Write($"{matrix[i, j],5} ");
-//         }
-//         Console.WriteLine();
-//     }
-// }
-// double ColumnArithmeticMean(int[,] matrix)
-// {
-//     double arithmeticMean = 0;
-//     for (int j = 0; j < matrix.GetLength(1); j++)
-//     {
-//         for (int i = 0; i < matrix.GetLength(0); i++)
-//         {
-//             arithmeticMean += matrix[i, j];
-//             arithmeticMean = arithmeticMean / numberRows;
-//             arithmeticMean = Math.Round(arithmeticMean, 1, MidpointRounding.ToZero);
-//         }
-//         return arithmeticMean ;
-//     }
-//     return arithmeticMean ;
-// }
 
 Console.WriteLine("Задайте количество строк таблицы: ");
 int numberRows = Convert.ToInt32(Console.ReadLine());
@@ -54,6 +15,7 @@ int numberColumns = Convert.ToInt32(Console.ReadLine());
 
 int[,] matrix = CreateMatrixRndInt(numberRows, numberColumns, 0, 5);
 PrintMatrix(matrix);
+
 
 double columnArithmeticMean = ColumnArithmeticMean(matrix);
 Console.WriteLine($" среднее врифметическое столбца 1 -> {columnArithmeticMean}");
@@ -94,7 +56,7 @@ double ColumnArithmeticMean(int[,] matrix)
         }
         arithmeticMean = arithmeticMean / numberRows;
         arithmeticMean = Math.Round(arithmeticMean, 1, MidpointRounding.ToZero);
-        return arithmeticMean;
+        // return arithmeticMean;
     }
     return arithmeticMean;
 }
@@ -104,7 +66,7 @@ double ColumnArithmeticMean(int[,] matrix)
 
 
 
-// Console.WriteLine("Задайте количество строк в массиве:");
+// Console.WriteLine("Задайте количество строк в массиве:"); 
 // int numberI = Convert.ToInt32(Console.ReadLine());
 // Console.WriteLine("Задайте количество столбцов в массиве:");
 // int numberJ = Convert.ToInt32(Console.ReadLine());

@@ -5,7 +5,7 @@
 // 1 -3,3 8 -9,9
 // 8 7,8 -7,1 9
 
-double[,] CreateTableRndDoub(int rows, int columns)
+double[,] CreateTableRndDoub(int rows, int columns, int min, int max)
 {
     double[,] table = new double[rows, columns];
     Random rnd = new Random();
@@ -14,7 +14,7 @@ double[,] CreateTableRndDoub(int rows, int columns)
     {
         for (int j = 0; j < table.GetLength(1); j++)
         {
-            table[i, j] = Math.Round(rnd.Next(-100, 100) * 0.1, 1);
+            table[i, j] = rnd.NextDouble() * (max - min) + min; // функция добалвения в массив вещественных чисел
         }
     }
     return table;
@@ -26,12 +26,12 @@ void PrintTable(double[,] table)
     {
         for (int j = 0; j < table.GetLength(1); j++)
         {
-            Console.Write($"{table[i, j],5} ");
+            double round = Math.Round(table[i, j], 1);
+            Console.Write($"{round,5} ");
         }
         Console.WriteLine();
     }
 }
 
-double[,] matrix = CreateTableRndDoub(3, 4);
-
+double[,] matrix = CreateTableRndDoub(3, 4, -10, 10);
 PrintTable(matrix);
