@@ -8,17 +8,19 @@
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
 
-Console.WriteLine("Задайте количество строк таблицы: ");
-int numberRows = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Задайте количество столбцов таблицы: ");
-int numberColumns = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Задайте количество строк таблицы: ");
+// int numberRows = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Задайте количество столбцов таблицы: ");
+// int numberColumns = Convert.ToInt32(Console.ReadLine());
 
-int[,] matrix = CreateMatrixRndInt(numberRows, numberColumns, 0, 5);
+int[,] matrix = CreateMatrixRndInt(3, 4, 0, 10);
+Console.WriteLine("задан массив: ");
+Console.WriteLine();
 PrintMatrix(matrix);
-
-
-double columnArithmeticMean = ColumnArithmeticMean(matrix);
-Console.WriteLine($" среднее врифметическое столбца 1 -> {columnArithmeticMean}");
+Console.WriteLine();
+double[] columnArithmeticMean = ColumnArithmeticMean(matrix);
+Console.WriteLine($" Среднее арифметическое каждого столбца: ");
+PrintArray(columnArithmeticMean);
 
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
@@ -45,23 +47,30 @@ void PrintMatrix(int[,] matrix)
         Console.WriteLine();
     }
 }
-double ColumnArithmeticMean(int[,] matrix)
+double[] ColumnArithmeticMean(int[,] matrix)
 {
-    double arithmeticMean = 0;
+    double[] arr = new double[matrix.GetLength(1)];
     for (int j = 0; j < matrix.GetLength(1); j++)
     {
+        double arithmeticMean = 0;
         for (int i = 0; i < matrix.GetLength(0); i++)
         {
             arithmeticMean += matrix[i, j];
         }
-        arithmeticMean = arithmeticMean / numberRows;
-        arithmeticMean = Math.Round(arithmeticMean, 1, MidpointRounding.ToZero);
-        // return arithmeticMean;
+        arr[j] = arithmeticMean / matrix.GetLength(0);
+
     }
-    return arithmeticMean;
+    return arr;
 }
-
-
+void PrintArray(double[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        double round = Math.Round(arr[i], 1);
+        if (i < arr.Length - 1) Console.Write($"{round,2} ; ");
+        else Console.Write($"{round}");
+    }
+}
 
 
 
