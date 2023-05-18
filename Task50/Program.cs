@@ -39,26 +39,27 @@ int numberRows = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Задайте количество столбцов таблицы: ");
 int numberColumns = Convert.ToInt32(Console.ReadLine());
 
-if (numberRows == 0 | numberColumns == 0)
+int[,] matrix = CreateMatrixRndInt(numberRows, numberColumns, 0, 60);
+PrintMatrix(matrix);
+Console.WriteLine();
+
+if (matrix.GetLength(0) == 0 | matrix.GetLength(1) == 0)
 {
     Console.WriteLine("Такую таблицу не создать");
     return;
 }
-int[,] matrix = CreateMatrixRndInt(numberRows, numberColumns, 0, 60);
-PrintMatrix(matrix);
-Console.WriteLine();
 
 Console.WriteLine("Введите координату X числа: ");
 int coordinateX = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите координату Y числа: ");
 int coordinateY = Convert.ToInt32(Console.ReadLine());
 
-if (coordinateX > numberRows)
+if (coordinateX >= numberRows)
 {
     Console.WriteLine($"Координата Х должна быть меньше {numberRows}");
     return;
 };
-if (coordinateY > numberColumns)
+if (coordinateY >= numberColumns)
 {
     Console.WriteLine($"Координата Y должна быть меньше {numberColumns}");
     return;
