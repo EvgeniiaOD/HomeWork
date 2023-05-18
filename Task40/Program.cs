@@ -22,8 +22,8 @@ bool IsExistTriangle(int numA, int numB, int numC)
     //  если тип будет не бул - то такой вариант уже не пройдет
 }
 
-// bool existTriangle = IsExistTriangle(numberA, numberB, numberC);
-// Console.WriteLine(existTriangle ? "такой треугольник существует" : "такой трейгольник НЕ существует");
+bool existTriangle = IsExistTriangle(numberA, numberB, numberC);
+Console.WriteLine(existTriangle ? "такой треугольник существует" : "такой трейгольник НЕ существует");
 
 
 // Console.Write("Введите сторону A: ");
