@@ -7,12 +7,6 @@
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-
-// Console.WriteLine("Задайте количество строк таблицы: ");
-// int numberRows = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine("Задайте количество столбцов таблицы: ");
-// int numberColumns = Convert.ToInt32(Console.ReadLine());
-
 int[,] matrix = CreateMatrixRndInt(3, 4, 0, 10);
 Console.WriteLine("задан массив: ");
 Console.WriteLine();
@@ -49,7 +43,9 @@ void PrintMatrix(int[,] matrix)
 }
 double[] ColumnArithmeticMean(int[,] matrix)
 {
-    double[] arr = new double[matrix.GetLength(1)];
+    double[] arr = new double[matrix.GetLength(1)]; //данное решение подсказано коллегой- студентом, 
+    // но толком не понимаю почему такой вывод и почему он реализован в методе подсчета, а не в выводе. 
+    // Сама бы я такой вариант даже не рассматривала. Очень ужна помощь!
     for (int j = 0; j < matrix.GetLength(1); j++)
     {
         double arithmeticMean = 0;
@@ -57,10 +53,10 @@ double[] ColumnArithmeticMean(int[,] matrix)
         {
             arithmeticMean += matrix[i, j];
         }
-        arr[j] = arithmeticMean / matrix.GetLength(0);
+        arr[j] = arithmeticMean / matrix.GetLength(0); // откуда тут j и почему но не i,j?
 
     }
-    return arr;
+    return arr; // как так? 
 }
 void PrintArray(double[] arr)
 {
@@ -74,6 +70,13 @@ void PrintArray(double[] arr)
 
 
 
+
+
+
+
+
+
+//Это ЧУЖОЙ код. Чтобы хоть как-то понять как и что делать в данной задаче:
 
 // Console.WriteLine("Задайте количество строк в массиве:"); 
 // int numberI = Convert.ToInt32(Console.ReadLine());

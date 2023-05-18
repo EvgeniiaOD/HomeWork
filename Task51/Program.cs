@@ -21,7 +21,6 @@ int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
    }
    return matrix;
 }
-
 void PrintMatrix(int[,] matrix)
 {
    for (int i = 0; i < matrix.GetLength(0); i++)
@@ -33,32 +32,32 @@ void PrintMatrix(int[,] matrix)
       Console.WriteLine();
    }
 }
-int SumMain(int[,] matrix)
-{
-   int sum = 0;
-   for (int i = 0; i < matrix.GetLength(0); i++)
-   {
-      int j = i;
-      sum += matrix[i, j];
-   }
-   return sum;
-}
-// еще вариант:
+// int SumMain(int[,] matrix)
+// {
+//    int sum = 0;
+//    for (int i = 0; i < matrix.GetLength(0); i++)
+//    {
+//       int j = i;
+//       sum += matrix[i, j];
+//    }
+//    return sum;
+// }
+// // еще вариант:
 
-int EvenElements(int[,] matrix)
-{
-    int sum = 0;
-    for (int i = 0; i < matrix.GetLength(0); i ++)
-    {
-        for (int j = 0; j < matrix.GetLength(1); j ++)
-        {
-            if (i == j)
-            sum += matrix[i,j]; 
-        }
-    }
-    return sum;
+// int EvenElements(int[,] matrix)
+// {
+//     int sum = 0;
+//     for (int i = 0; i < matrix.GetLength(0); i ++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j ++)
+//         {
+//             if (i == j)
+//             sum += matrix[i,j]; 
+//         }
+//     }
+//     return sum;
 
-}
+// }
 
 // оптимальный вариант: 
 
@@ -79,11 +78,11 @@ Console.WriteLine();
 int sumMain = SumMain(matrix);
 Console.WriteLine(sumMain);
 
-int[,] matrix = CreateMatrixRndInt(3, 4, -10, 10);
-PrintMatrix(matrix);
-Console.WriteLine();
-int sumMain = SumMain(matrix);
-Console.WriteLine(sumMain);
+// int[,] matrix = CreateMatrixRndInt(3, 4, -10, 10);
+// PrintMatrix(matrix);
+// Console.WriteLine();
+// int sumMain = SumMain(matrix);
+// Console.WriteLine(sumMain);
 
 //  еще вариант: 
 
