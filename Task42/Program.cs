@@ -12,6 +12,7 @@ if (number >0)
 int binResult = DecToBin(number);
 Console.WriteLine(binResult);
 }
+
 int DecToBin(int num)
 {
     int count = 1;

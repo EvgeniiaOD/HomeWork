@@ -27,11 +27,11 @@ void PrintArray(int[] arr)
 
 void ReversArray(int[] array)
 {
-    for (int i = 0; i < arr.length / 2; i++)
+    for (int i = 0; i < array.Length / 2; i++)
     {
-        int timp = arr[i];
-        arr[i] = arr[array.Length - 1 - i];
-        arr[array.Length - 1 - i] = temp;
+        int temp = array[i];
+        array[i] = array[array.Length - 1 - i];
+        array[array.Length - 1 - i] = temp;
     }
 }
 
