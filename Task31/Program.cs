@@ -16,7 +16,6 @@ int[] CreateArrayRndInt(int size, int min, int max)
     }
     return arr;
 }
-
 void PrintArray (int[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
@@ -25,15 +24,6 @@ void PrintArray (int[] arr)
         else Console.Write($"{arr[i]}");
     }
 }
-
-int[] array = CreateArrayRndInt(12, -9, 9);
-Console.Write("[");
-PrintArray(array);
-Console.Write("]");
-Console.WriteLine();
-
-//
-
 int SumPositiveElements (int[] arr)
 {
     int sum = 0;
@@ -43,7 +33,6 @@ int SumPositiveElements (int[] arr)
     }
     return sum;
 }
-
 int SumNegativeElements (int[] arr)
 {
     int sum = 0;
