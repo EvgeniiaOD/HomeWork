@@ -65,7 +65,7 @@ void FindNumbers(int[] array)
          count = 1;
       }
    }
-   Console.WriteLine($"{number} встречается {count} раз");
+   Console.WriteLine($"{number} встречается {count} раз"); // выводим последнее число, так как оно по условию не попадает в цикл, поэтому обращаемся к нему вне (после цикла)
 }
 
 
