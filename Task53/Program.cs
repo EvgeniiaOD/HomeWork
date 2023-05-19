@@ -28,26 +28,24 @@ void PrintMatrix(int[,] matrix)
         Console.WriteLine();
     }
 }
-
 void SwapRows(int[,] matrix)
 {
     int FirstRow = 0;
     int LastRow = matrix.GetLength(0) - 1;
-    int temp = 0;
-for (int j = 0; j < matrix.GetLength(1); j++)
-{
-    temp = matrix [FirstRow, j];
-    matrix [FirstRow, j] = matrix [LastRow, j];
-    matrix [LastRow, j] = temp;
-}
+    for (int j = 0; j < matrix.GetLength(1); j++)
+    {
+        int temp = matrix[FirstRow, j];
+        matrix[FirstRow, j] = matrix[LastRow, j];
+        matrix[LastRow, j] = temp;
+    }
 
 }
 
 int[,] matrix = CreateMatrixRndInt(4, 3, -10, 10);
-PrintMatrix (matrix);
+PrintMatrix(matrix);
 Console.WriteLine();
 SwapRows(matrix);
-PrintMatrix (matrix);
+PrintMatrix(matrix);
 
 
 // int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
@@ -81,23 +79,20 @@ PrintMatrix (matrix);
 // {
 //    int lastPosition = matrix.GetLength(0) - 1;
 //    int firstPosition = 0;
-//    int temp = 0;
 //    for (int j = 0; j < matrix.GetLength(1); j++)
 //    {
-//       temp=matrix[firstPosition, j];
+//       int temp = matrix[firstPosition, j];
 //       matrix[firstPosition, j] = matrix[lastPosition, j];
 //       matrix[lastPosition, j] = temp;
 //    }
 // }
 
-// 6 1 2 3  2
-// 1 2 3 4  1
-// 2 3 4 5  6
+// // 6 1 2 3  2
+// // 1 2 3 4  1
+// // 2 3 4 5  6
 
 // int[,] matrix = CreateMatrixRndInt(4, 3, -10, 10);
 // PrintMatrix(matrix);
 // Console.WriteLine();
 // SwapPosition(matrix);
 // PrintMatrix(matrix);
-
-
