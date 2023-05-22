@@ -34,14 +34,11 @@ void PrintMatrix(int[,] matr)
         Console.WriteLine();
     }
 }
-bool CheckIfSquare(int rows, int columns)
+bool CheckIfSquare(int[,] matr) 
 {
-    if (rows > columns | rows < columns | rows == 0 | columns == 0)
-    {
-        Console.WriteLine("Массив не является прямоугольным");
+    if (matr.GetLength(0) == matr.GetLength(1)) return true;
+    else
         return false;
-    }
-    return true;
 }
 int[] FindSumByRows(int[,] matr)
 {
@@ -67,29 +64,35 @@ void PrintArray(int[] array)
 }
 int FindRowNumber(int[] array)
 {
-    int minNum = array[0]; 
-    int rowNum = 1; 
-    for (int i = 1; i < array.Length ; i++) 
+    int minNum = array[0];
+    int rowNum = 1;
+    for (int i = 1; i < array.Length; i++)
     {
-         if (minNum > array[i]) 
+        if (minNum > array[i])
         {
-            minNum = array[i]; 
-            rowNum = i+1; 
+            minNum = array[i];
+            rowNum = i + 1;
         }
     }
     return rowNum;
 }
 
 
-int[,] matrix = CreateMatrixRndInt(4, 4, 0, 20);
-Console.WriteLine("Задан массив: ");
-PrintMatrix(matrix);
-Console.WriteLine();
-CheckIfSquare(matrix.GetLength(0), matrix.GetLength(1));
-int[] sumByRows = FindSumByRows(matrix);
-Console.WriteLine("Сумма каждой строки равна: ");
-PrintArray(sumByRows);
-Console.WriteLine();
-Console.WriteLine();
-int smallestNumberRow = FindRowNumber(sumByRows);
-Console.WriteLine($"Номер строки с наименьшей суммой элементов -> {smallestNumberRow}");
+int[,] matrix = CreateMatrixRndInt(6, 4, 0, 20);
+if (CheckIfSquare(matrix))
+{
+    Console.WriteLine("Задан массив: ");
+    PrintMatrix(matrix);
+    Console.WriteLine();
+    int[] sumByRows = FindSumByRows(matrix);
+    Console.WriteLine("Сумма каждой строки равна: ");
+    PrintArray(sumByRows);
+    Console.WriteLine();
+    Console.WriteLine();
+    int smallestNumberRow = FindRowNumber(sumByRows);
+    Console.WriteLine($"Номер строки с наименьшей суммой элементов -> {smallestNumberRow}");
+}
+else
+{
+Console.WriteLine("Массив не является прямоугольным");
+}
