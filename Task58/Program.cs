@@ -33,20 +33,20 @@ void PrintMatrix(int[,] matr)
 }
 bool CheckIfCanMultiply(int[,] matrA, int[,] matrB)
 {
-    if (matrA.GetLength(1) != matrB.GetLength(0))
-    {
-        Console.WriteLine("Такие матрицы перемножить нельзя");
-        return false;
-    }
-    Console.WriteLine("Такие матрицы перемножить можно");
-    return true;
+    if (matrA.GetLength(1) == matrB.GetLength(0))
+        // {
+        // Console.WriteLine("Такие матрицы перемножить нельзя");
+        return true;
+    // }
+    // Console.WriteLine("Такие матрицы перемножить можно");
+    else return false;
 }
 int[,] MultiplyMatrix(int[,] matrA, int[,] matrB)
 {
     int[,] matrC = new int[matrA.GetLength(0), matrB.GetLength(1)];
-    
-    int num = matrA[i, j] * matrB[i, j] + matrA[i, j + 1] * matrB[i + 1, j];
-    matrC[i, j] = num;
+
+    // int num = matrA[i, j] * matrB[i, j] + matrA[i, j + 1] * matrB[i + 1, j];
+    // matrC[i, j] = num;
 
     return matrC;
 }
@@ -62,8 +62,18 @@ int[,] matrixB = CreateMatrixRndInt(2, 2, 0, 10);
 Console.WriteLine("Вторая сходная матрица:");
 PrintMatrix(matrixB);
 Console.WriteLine();
-CheckIfCanMultiply(matrixA, matrixB);
-Console.WriteLine();
-Console.WriteLine("Результирующая матрица будет:");
-int[,] matrixC = MultiplyMatrix(matrixA, matrixB);
-PrintMatrix(matrixC);
+
+if (CheckIfCanMultiply(matrixA, matrixB))
+{
+    Console.WriteLine("Результирующая матрица будет:");
+    int[,] matrixC = MultiplyMatrix(matrixA, matrixB);
+    PrintMatrix(matrixC);
+}
+else
+{
+    Console.WriteLine("Такие матрицы перемножить нельзя");
+}
+
+// Console.WriteLine("Результирующая матрица будет:");
+// int[,] matrixC = MultiplyMatrix(matrixA, matrixB);
+// PrintMatrix(matrixC);
