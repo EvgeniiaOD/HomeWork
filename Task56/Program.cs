@@ -78,7 +78,7 @@ int FindRowNumber(int[] array)
 }
 
 
-int[,] matrix = CreateMatrixRndInt(6, 4, 0, 20);
+int[,] matrix = CreateMatrixRndInt(4, 4, 0, 20);
 if (CheckIfSquare(matrix))
 {
     Console.WriteLine("Задан массив: ");
