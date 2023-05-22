@@ -60,7 +60,9 @@ int[,] SortByRow(int[,] matr)
 
 
 int[,] matrix = CreateMatrixRndInt(4, 3, 0, 20);
+Console.WriteLine("Исходный массив:");
 PrintMatrix(matrix);
 Console.WriteLine();
+Console.WriteLine("Отсортированный массив:");
 int[,] newMatrix = SortByRow(matrix);
 PrintMatrix(newMatrix);
