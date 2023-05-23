@@ -11,7 +11,7 @@ int numberN = Convert.ToInt32(Console.ReadLine());
 
 int SumNaturalNumbers(int numM, int numN) // если М меньше N
 {
-    if (numM == numN ) return numN; 
+    if (numM == numN) return numN;
     return numM + SumNaturalNumbers(numM + 1, numN);
 }
 int SumNaturalNumbers2(int numM, int numN) // если M больше N
@@ -20,5 +20,5 @@ int SumNaturalNumbers2(int numM, int numN) // если M больше N
     return numM + SumNaturalNumbers2(numM - 1, numN);
 }
 
-if (numberM> numberN) Console.WriteLine(SumNaturalNumbers2(numberM, numberN));
-else Console.WriteLine(SumNaturalNumbers(numberM, numberN));
+if (numberM < numberN) Console.WriteLine(SumNaturalNumbers(numberM, numberN));
+else Console.WriteLine(SumNaturalNumbers2(numberM, numberN));
