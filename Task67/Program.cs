@@ -14,3 +14,8 @@ int SumNumbers(int n)
     if (n == 0) return 0;
     return n % 10 + SumNumbers(n / 10);
  }
+
+//  int SumNumbers(int num)//453//45//4
+// {
+//     return num == 0 ? 0 : num % 10 + SumDigits(num / 10); то же саое в одну строку
+// }
