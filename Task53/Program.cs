@@ -38,7 +38,6 @@ void SwapRows(int[,] matrix)
         matrix[FirstRow, j] = matrix[LastRow, j];
         matrix[LastRow, j] = temp;
     }
-
 }
 
 int[,] matrix = CreateMatrixRndInt(4, 3, -10, 10);

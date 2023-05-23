@@ -36,6 +36,7 @@ void PrintMatrix(int[,] matr)
         Console.WriteLine();
     }
 }
+
 int[,] SortByRow(int[,] matr)
 {
     int[,] newMatr = new int[matr.GetLength(0), matr.GetLength(1)];
@@ -57,6 +58,7 @@ int[,] SortByRow(int[,] matr)
     }
     return matr;
 }
+
 
 
 int[,] matrix = CreateMatrixRndInt(4, 3, 0, 20);
