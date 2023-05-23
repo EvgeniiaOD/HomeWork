@@ -85,12 +85,12 @@ if (CheckIfSquare(matrix))
     PrintMatrix(matrix);
     Console.WriteLine();
     int[] sumByRows = FindSumByRows(matrix);
-    Console.WriteLine("Сумма каждой строки равна: ");
+    Console.WriteLine("Сумма каждой строки равна:");
     PrintArray(sumByRows);
     Console.WriteLine();
     Console.WriteLine();
     int smallestNumberRow = FindRowNumber(sumByRows);
-    Console.WriteLine($"Номер строки с наименьшей суммой элементов -> {smallestNumberRow}");
+    Console.WriteLine($"Номер строки с наименьшей суммой элементов -> {smallestNumberRow} строка");
 }
 else
 {
