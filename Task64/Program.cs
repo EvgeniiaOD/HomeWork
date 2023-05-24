@@ -10,6 +10,7 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 if (CheckIfNatural(number))
 {
+Console.Write ($"N = {number} -> ");
 NaturalNumbers(number);
 }
 else
