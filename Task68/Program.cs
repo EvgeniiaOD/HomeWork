@@ -11,26 +11,24 @@
 //    еще
 //      вернуть ack(n - 1, ack (n, m - 1))
 
-bool CheckIfNotNegative(int numN, int numM)
+bool CheckIfNotNegative(int numM, int numN)
 {
     if (numN <= 0 | numM <= 0) return false;
     return true;
 }
-int Accerman(int numN, int numM)
+int Accerman(int numM, int numN)
 {
-    if (numN == 0)
-        return numM + 1;
+    if (numM == 0)
+        return numN + 1;
     else
-    if ((numN != 0) && (numM == 0))
-        return Accerman(numN - 1, 1);
+    if ((numM != 0) && (numN == 0))
+        return Accerman(numM - 1, 1);
     else
-        return Accerman(numN - 1, Accerman(numN, numM - 1));
+        return Accerman(numM - 1, Accerman(numM, numN - 1));
 }
 
-int numberN = 3;
-int numberM = 2;
+int numberM = 3;
+int numberN = 2;
 
-if (CheckIfNotNegative(numberN, numberM)) Console.WriteLine (Accerman(numberN, numberM));
+if (CheckIfNotNegative(numberM, numberN)) Console.WriteLine ($"m={numberM}, n={numberN} => A(m,n) = {Accerman(numberM, numberN)}");
 else Console.WriteLine("Нужны неотрицательные числа!");
-
-
