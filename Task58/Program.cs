@@ -37,12 +37,12 @@ bool CheckIfCanMultiply(int[,] matrA, int[,] matrB)
 }
 int[,] MultiplyMatrix(int[,] matrA, int[,] matrB)
 {
-    int m = 0; int n = 0; int i = 0;
     int[,] matrC = new int[matrA.GetLength(0), matrB.GetLength(1)];
-    for (m = 0; m < matrC.GetLength(0); m++)
+    int i = 0;
+    for (int m = 0; m < matrC.GetLength(0); m++)
     {
         int c = 0;
-        for (n = 0; n < matrC.GetLength(1); n++)
+        for (int n = 0; n < matrC.GetLength(1); n++)
         {
             int sum = 0;
             int j = 0;
