@@ -26,7 +26,7 @@ void PrintMatrix(int[,] matr)
     {
         for (int j = 0; j < matr.GetLength(1); j++)
         {
-            Console.Write($"{matr[i, j],2} ");
+            Console.Write($"{matr[i, j],3} ");
         }
         Console.WriteLine();
     }
@@ -44,79 +44,107 @@ bool CheckIfCanMultiply(int[,] matrA, int[,] matrB)
 int[,] MultiplyMatrix(int[,] matrA, int[,] matrB)
 {
     int[,] matrC = new int[matrA.GetLength(0), matrB.GetLength(1)];
-    for (int i = matrB.GetLength(0)-1; i >= 0; i--)
-    {
-        int num = 0;
-        for (int j = matrA.GetLength(1)-1; j >= 0; j--)
-        {
-            num = matrA[i-1, j ] * matrB[i-1, j ] + matrA[i , j ] * matrB[i , j ];
-        }
-        matrC[matrA.GetLength(0), matrB.GetLength(1)] = num;
-    }
-    // for (int i = 0; i < matrC.GetLength(0); i++)
-    // {
-    //     for (int j = 0; j < matrC.GetLength(1); j++)
-    //     {
-    //         int num = matrA[i, j] * matrB[i, j] + matrA[i, j + 1] * matrB[i + 1, j];
-    //         matrC[i, j] = num;
-    //     }
-    // }
-    // int num = matrA[i, j] * matrB[i, j] + matrA[i, j + 1] * matrB[i + 1, j];
-    // matrC[i, j] = num;
     return matrC;
 }
+int[] MatrixToArrayByRows(int[,] matr)
+{
+    int size = matr.Length;
+    int[] array = new int[size];
+    array[0] = matr[0, 0];
+    int count = 0;
+    for (int i = 0; i < matr.GetLength(0); i++)
+    {
+        for (int j = 0; j < matr.GetLength(1); j++)
+        {
+            array[count++] = matr[i, j];
+        }
+    }
+    return array;
+}
+int[] MatrixToArrayByColumns(int[,] matr)
+{
+    int size = matr.Length;
+    int[] array = new int[size];
+    array[0] = matr[0, 0];
+    int count = 0;
+    for (int j = 0; j < matr.GetLength(1); j++)
+    {
+        for (int i = 0; i < matr.GetLength(0); i++)
+        {
+            array[count++] = matr[i, j];
+        }
+    }
+    return array;
+}
 
-// int[,] FillUpNewMatrix(int[,] matrC, int[,] matrA, int[,] matrB)
+void PrintArray(int[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (i < arr.Length - 1) Console.Write($"{arr[i]}, ");
+        else Console.Write($"{arr[i]}");
+    }
+}
+
+int[,] Fill(int[,]matr, int [,]matrA, int[,]matrB)
+{
+   int[,] matrC = new int[matrA.GetLength(0), matrB.GetLength(1)];
+int i =0; int j=0; int r=0; int c=0; int m=0; int n=0;
+int sum = 0;
+sum += matrA[i,j]*matrB[r,c]; j++; r++;
+// ниже используем способ зполнения новой матрицы построчно новыми значениями :
+   for (int i = 0; i < matrix.GetLength(0); i++)
+   {
+      for (int j = 0; j < matrix.GetLength(1); j++)
+      {
+         matrix[i, j] = sum;
+      }
+   }
+   return matrC;
+}
+// int[,] FillNewMatrix(int[,] matr, int[] arrA, int[] arrB)
 // {
-//     // for (int i = 0; i < matrC.GetLength(0); i++)
-//     // {
-//     //     for (int j = 0; j < matrC.GetLength(1); j++)
-//     //     {
-//     matrC[i, j] = matrA[i, j] * matrB[i, j] + matrA[i, j + 1] * matrB[i + 1, j];
-//     matrC[i, j + 1] = matrA[i, j] * matrB[i + 1, j] + matrA[i, j + 1] * matrB[i + 1, j + 1];
-//     matrC[i + 1, j] = matrA[i, j + 1] * matrB[i, j] + matrA[i + 1, j + 1] * matrB[i + 1, j];
-//     matrC[i + 1, j + 1] = matrA[i, j + 1] * matrB[i, j + 1] + matrA[i + 1, j + 1] * matrB[i + 1, j + 1];
-//     //     }
-//     // }
-//     return matrC;
+//     int k = 0;
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             matr[i, j] = arrA[k] * arrB[k];
+//         }
+//         k++;
+//     }
+//     return matr;
 // }
+
 
 
 int[,] matrixA = CreateMatrixRndInt(2, 2, 0, 10);
 Console.WriteLine("Первая сходная матрица:");
 PrintMatrix(matrixA);
 Console.WriteLine();
+
 int[,] matrixB = CreateMatrixRndInt(2, 2, 0, 10);
 Console.WriteLine("Вторая сходная матрица:");
 PrintMatrix(matrixB);
 Console.WriteLine();
 
+int[] arrayA = MatrixToArrayByRows(matrixA);
+PrintArray(arrayA);
+Console.WriteLine();
+int[] arrayB = MatrixToArrayByColumns(matrixB);
+PrintArray(arrayB);
+Console.WriteLine();
+
+
 if (CheckIfCanMultiply(matrixA, matrixB))
 {
-    // int[,] matrixC = new int[matrixA.GetLength(0), matrixB.GetLength(1)];
-    // for (int i = matrixB.GetLength(0); i >= 0; i--)
-    // {
-    //     int num = 0;
-    //     for (int j = matrixA.GetLength(1); j >= 0; j--)
-    //     {
-    //         num = matrixA[i, j + 1] * matrixB[i, j + 1] + matrixA[i + 1, j + 1] * matrixB[i + 1, j + 1];
-    //     }
-    //     matrixC[matrixA.GetLength(0), matrixB.GetLength(1)] = num;
-    // }
-
-
-    Console.WriteLine("Результирующая матрица будет:");
-    int[,] matrixC = MultiplyMatrix(matrixA, matrixB);
-    // matrixC[matrixA.GetLength(1), matrixB.GetLength(0)] = matrixA[i, j] * matrixB[i, j] + matrixA[i, j + 1] * matrixB[i + 1, j];
-    // matrixC[i, j + 1] = matrixA[i, j] * matrixB[i + 1, j] + matrixA[i, j + 1] * matrixB[i + 1, j + 1];
-    // matrixC[i + 1, j] = matrixA[i, j + 1] * matrixB[i, j] + matrixA[i + 1, j + 1] * matrixB[i + 1, j];
-    // matrixC[i + 1, j + 1] = matrixA[i, j + 1] * matrixB[i, j + 1] + matrixA[i + 1, j + 1] * matrixB[i + 1, j + 1];
-    PrintMatrix(matrixC);
+    int[,] matrC = MultiplyMatrix(matrixA, matrixB);
+    PrintMatrix(matrC);
 }
 else
 {
     Console.WriteLine("Такие матрицы перемножить нельзя");
-}
+};
 
 // Console.WriteLine("Результирующая матрица будет:");
 // int[,] matrixC = MultiplyMatrix(matrixA, matrixB);
