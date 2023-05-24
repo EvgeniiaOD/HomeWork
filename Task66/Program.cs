@@ -20,5 +20,5 @@ int SumNaturalNumbers2(int numM, int numN) // если M больше N
     return numM + SumNaturalNumbers2(numM - 1, numN);
 }
 
-if (numberM < numberN) Console.WriteLine(SumNaturalNumbers(numberM, numberN));
-else Console.WriteLine(SumNaturalNumbers2(numberM, numberN));
+if (numberM < numberN) Console.WriteLine ($"M={numberM}, N={numberN} -> {SumNaturalNumbers(numberM, numberN)}");
+else Console.WriteLine ($"M={numberM}, N={numberN} -> {SumNaturalNumbers2(numberM, numberN)}");
