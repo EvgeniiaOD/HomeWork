@@ -30,5 +30,5 @@ int Accerman(int numM, int numN)
 int numberM = 3;
 int numberN = 2;
 
-if (CheckIfNotNegative(numberM, numberN)) Console.WriteLine ($"m={numberM}, n={numberN} => A(m,n) = {Accerman(numberM, numberN)}");
+if (CheckIfNotNegative(numberM, numberN)) Console.WriteLine ($"m={numberM}, n={numberN} -> A(m,n) = {Accerman(numberM, numberN)}");
 else Console.WriteLine("Нужны неотрицательные числа!");
