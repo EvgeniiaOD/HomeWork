@@ -5,25 +5,32 @@
 // 66(0,0,0) 27(0,0,1) 25(0,1,0) 90(0,1,1)
 // 34(1,0,0) 26(1,0,1) 41(1,1,0) 55(1,1,1)
 
-// int RepetitiveNumberCheck(int num, int[,,] matr)
+// bool RepetitiveNumberCheck(int existElement, int num) // ДА если такого числа нет !
 // {
-//     for (int i = 0; i < matr.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < matr.GetLength(1); j++)
-//         {
-//             for (int k = 0; k < matr.GetLength(2); k++)
-//             {
-//                 if (num != matr[i, j, k]) return num ; 
-//                 else RepetitiveNumberCheck (num, matr);          
-//             }
-//         }
-//     }
-//     return num;
+//     if (num == existElement) return false;
+//     return true;
 // }
-int[,,] CreateMatrixRndInt(int rows, int columns, int depth, int min, int max)
+bool RepetitiveNumberCheck(int[,,] matr, int num) // ДА если такого числа нет !
+{
+    for (int i = 0; i < matr.GetLength(0); i++)
+    {
+        for (int j = 0; j < matr.GetLength(1); j++)
+        {
+            for (int k = 0; k < matr.GetLength(2); k++)
+            {
+                if (matr[i, j, k] == num) return false;
+            }
+        }
+    }
+    return true;
+}
+
+
+
+int[,,] CreateMatrixRndInt(int rows, int columns, int depth, int min, int max) // заполняется нулями
 {
     int[,,] matr = new int[rows, columns, depth];
-    Random rnd = new Random();
+    // Random rnd = new Random();
 
     for (int i = 0; i < matr.GetLength(0); i++)
     {
@@ -31,12 +38,21 @@ int[,,] CreateMatrixRndInt(int rows, int columns, int depth, int min, int max)
         {
             for (int k = 0; k < matr.GetLength(2); k++)
             {
-                int temp = rnd.Next(min, max + 1);
-                matr[i, j, k] = RepetitiveNumberCheck(temp,matr);
+                matr[i, j, k] = 0;
+                // int a = 0;
+                // if (RepetitiveNumberCheck(matr[i, j, k], matr))
+                // a= FillRnd(matr, min, max);
+                // else (RepetitiveNumberCheck(matr[i, j, k], matr));
             }
         }
     }
     return matr;
+}
+int FillRnd(int[,,] matr, int min, int max)
+{
+    Random rnd = new Random();
+    int num = rnd.Next(min, max + 1);
+    return num;
 }
 void PrintMatrix(int[,,] matr)
 {
@@ -59,13 +75,65 @@ bool ValidateMatrixSize(int[,,] matr)
     return true;
 }
 
-int[,,] matrix = CreateMatrixRndInt(2, 2, 2, 0, 8);
-if (ValidateMatrixSize(matrix))
+int[,,] matrix = CreateMatrixRndInt(2, 2, 2, 0, 9); // пока заполнена нулями
+Console.Write("Исходная матрица:"); // пока заполнена нулями
+PrintMatrix(matrix); // пока заполнена нулями
+
+
+int[,,] TestMAtrixFill(int[,,] matrix)
 {
-    Console.WriteLine("Задан массив: ");
-    PrintMatrix(matrix);
+    int count = 0;
+    while (count < matrix.Length)
+    {
+        int a = FillRnd(matrix, 0, 10);// получили рандомное число из указанного отрезка
+                                       // while (RepetitiveNumberCheck(matrix[i, j, k], a)) // пока такого числа нет
+                                       // {
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                for (int k = 0; k < matrix.GetLength(2); k++)
+                {
+                    if (RepetitiveNumberCheck(matrix[i, j, k], a))
+                        matrix[i, j, k] = a;
+                    else count++;
+
+                    // int a = FillRnd(matrix, 0, 10); // получили рандомное число из указанного отрезка
+                    // while (RepetitiveNumberCheck(matrix, a))
+                    // {
+                    //     a = FillRnd(matrix, 0, 10);
+                    //     RepetitiveNumberCheck(matrix, a);
+                    // }
+                    // matrix[i, j, k] = a;
+
+                    // a =FillRnd(matrix, 0,10);
+                    //     RepetitiveNumberCheck(matrix, a);
+
+
+                    // int a = 0;
+                    // if (RepetitiveNumberCheck(matr[i, j, k], matr))
+                    // a= FillRnd(matr, min, max);
+                    // else (RepetitiveNumberCheck(matr[i, j, k], matr));
+                }
+            }
+        }
+    }
+    return matrix;
 }
-else
-{
-    Console.WriteLine("Массив такого размера не заполнить неповторяющимися числами!");
-}
+
+
+PrintMatrix(TestMAtrixFill(matrix)); // заполнили рандомными числами 
+
+
+// if (ValidateMatrixSize(matrix))
+// {
+//     Console.WriteLine("Задан массив: ");
+//     PrintMatrix(matrix);
+// }
+// else
+// {
+//     Console.WriteLine("Массив такого размера не заполнить неповторяющимися числами!");
+// }
+
+
+
